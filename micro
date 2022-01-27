@@ -1,0 +1,7 @@
+2022-01-27 14:17:12  file=v4@v4.5.0/service.go:206 level=info Starting [service] apiuser
+2022-01-27 14:17:12  file=server/rpc_server.go:820 level=info Transport [http] Listening on [::]:65048
+2022-01-27 14:17:12  file=server/rpc_server.go:840 level=info Broker [http] Connected to 127.0.0.1:65049
+2022-01-27 14:17:12  file=server/rpc_server.go:654 level=info Registry [mdns] Registering node: apiuser-b9dc736d-9447-491c-9ce3-f4f698b8d3b3
+2022-01-27 14:17:36  file=handler/apiuser.go:16 level=info Received Apiuser.Call request: name:"John"
+2022-01-27 15:07:01  file=server/rpc_server.go:767 level=info Registry [mdns] Deregistering node: apiuser-b9dc736d-9447-491c-9ce3-f4f698b8d3b3
+2022-01-27 15:07:01  file=server/rpc_server.go:962 level=info Broker [http] Disconnected from 127.0.0.1:65049
