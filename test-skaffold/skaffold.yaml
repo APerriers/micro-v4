@@ -1,0 +1,13 @@
+---
+
+apiVersion: skaffold/v2beta21
+kind: Config
+metadata:
+  name: test-skaffold
+build:
+  artifacts:
+  - image: test-skaffold
+deploy:
+  kubectl:
+    manifests:
+    - resources/*.yaml

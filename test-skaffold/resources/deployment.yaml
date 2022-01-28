@@ -1,0 +1,24 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-skaffold
+  labels:
+    app: test-skaffold
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-skaffold
+  template:
+    metadata:
+      labels:
+        app: test-skaffold
+    spec:
+      containers:
+      - name: test-skaffold
+        image: test-skaffold:latest
+        envFrom:
+        - configMapRef:
+            name: test-skaffold-env
