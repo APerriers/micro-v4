@@ -1,0 +1,13 @@
+---
+
+apiVersion: skaffold/v2beta21
+kind: Config
+metadata:
+  name: cli-client
+build:
+  artifacts:
+  - image: cli-client
+deploy:
+  kubectl:
+    manifests:
+    - resources/*.yaml

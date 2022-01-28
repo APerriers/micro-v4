@@ -1,0 +1,24 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cli-client
+  labels:
+    app: cli-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cli-client
+  template:
+    metadata:
+      labels:
+        app: cli-client
+    spec:
+      containers:
+      - name: cli-client
+        image: cli-client:latest
+        envFrom:
+        - configMapRef:
+            name: cli-client-env

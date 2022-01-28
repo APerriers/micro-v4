@@ -1,0 +1,13 @@
+---
+
+apiVersion: skaffold/v2beta21
+kind: Config
+metadata:
+  name: srv
+build:
+  artifacts:
+  - image: srv
+deploy:
+  kubectl:
+    manifests:
+    - resources/*.yaml

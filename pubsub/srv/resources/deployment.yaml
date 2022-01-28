@@ -1,0 +1,24 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: srv
+  labels:
+    app: srv
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: srv
+  template:
+    metadata:
+      labels:
+        app: srv
+    spec:
+      containers:
+      - name: srv
+        image: srv:latest
+        envFrom:
+        - configMapRef:
+            name: srv-env
