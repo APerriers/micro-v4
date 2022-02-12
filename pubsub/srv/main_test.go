@@ -37,7 +37,7 @@ func TestCall(t *testing.T) {
 
 func TestGetSrv(t *testing.T) {
 	srv := micro.NewService(
-		micro.Name("test"),
+		micro.Name("TestGetSrv"),
 		micro.Version(version),
 	)
 	srv.Init()
@@ -47,6 +47,15 @@ func TestGetSrv(t *testing.T) {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	getServiceList, err := mdnsRegistry.ListServices()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Info(getServiceList)
+	log.Info(mdnsRegistry.String())
+
 	next := selector.Random(getService) // 如果有多个服务，则随机调用一个
 	node, err := next()
 	if err != nil {
